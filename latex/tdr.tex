@@ -1,0 +1,79 @@
+\documentclass[12pt, oneside]{report}
+
+\usepackage[a4paper,right=20mm,left=30mm, top=30mm, bottom=20mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+
+% Imatges
+\usepackage{graphicx, wrapfig}
+\graphicspath{ {img/} }
+
+% Bibliografia
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{bibliografia.bib}
+
+% Profunditat del índex
+\setcounter{tocdepth}{3}
+
+% Lletra tipus Arial
+\usepackage[OT1]{fontenc}
+%\renewcommand*\familydefault{\sfdefault}
+
+% Control de l'interlineat
+\usepackage{setspace}
+\setlength{\parskip}{\baselineskip}
+
+
+\title{Elaboració d'un TDR amb \LaTeX{}}
+
+\author{
+  Otero Mateo, Noé\\
+  \texttt{noe.otero@gmail.com}
+}
+\author{
+  De Tal, Fulano\\
+  \texttt{fulanodetal@gmail.com}
+}
+
+\begin{document}
+
+% Portada
+\maketitle
+
+% Índex
+\tableofcontents
+
+\onehalfspace
+
+% Agraiments (opcional)
+\chapter*{Agraiments}
+% Aquest capítol es no numerat. S'ha d'afegir manualment a l'índex.
+\addcontentsline{toc}{chapter}{Agraiments}
+\input{sections/agraiments}
+
+% Introducció
+\chapter*{Introducció}
+% Aquest capítol es no numerat. S'ha d'afegir manualment a l'índex.
+\addcontentsline{toc}{chapter}{Introducció}
+\input{sections/introduccio}
+
+%------------------------------------------------------------------
+%
+%                        COS DEL TREBALL
+%
+%------------------------------------------------------------------
+\input{sections/cos}
+
+% Conclusions
+\chapter{Conclusions}
+\input{sections/conclusions}
+
+% Annexos
+\chapter{I\lgem ustracions i anexos}
+
+% Bibliografia
+\addcontentsline{toc}{chapter}{Bibliografia}
+\printbibliography
+
+
+\end{document}
